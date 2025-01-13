@@ -3,6 +3,7 @@
 
 #include "./ct_class.hpp"
 #include <iostream>
+#include <cstdlib>
 #include <string>
 
 namespace const_value

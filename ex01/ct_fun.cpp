@@ -13,3 +13,8 @@ void Contact::init_arry()
     cout<<"insert darkest_secret : ";
     getline(cin, darkest_secret, '\n');
 }
+
+void Contact::print_contact()
+{
+    cout<<idx<<" | "<<first_name<<" | "<<last_name<<" | "<<nick_name<<endl;
+}

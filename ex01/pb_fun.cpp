@@ -15,17 +15,25 @@ void Phonebook::insert_command()
     {
         contact[idx].init_arry();
         contact[idx].idx = idx;
-        idx = cnt % 8;
         cnt += 1;
+        idx = cnt % 8;
     }
     else if (command.compare("SEARCH") == 0, command.length() == 6)
     {
-        /* code */
+        for (size_t i = 0; i < cnt; i++)
+        {
+            cout<<"cnt is "<<cnt<<"idx is "<<idx<<"i is "<<i<<endl;
+            contact[i].print_contact();
+        }
     }
+   else if (command.compare("EXIT") == 0, command.length() == 4)
+   {
+        exit(0);
+   }
     command.clear();
 }
 
-void Phonebook::show_index_contact()
-{
-    if (cnt > 8)
-}
+// void Phonebook::show_index_contact()
+// {
+//     if (cnt > 8)
+// }

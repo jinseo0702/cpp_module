@@ -16,6 +16,7 @@ class Contact
     public :
         int idx;
         void init_arry();
+        void print_contact();
 }
 
 #endif
