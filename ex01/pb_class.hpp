@@ -5,6 +5,9 @@
 #include <iostream>
 #include <cstdlib>
 #include <string>
+#include <sstream>
+
+using std::string;
 
 namespace const_value
 {
@@ -18,10 +21,17 @@ class Phonebook
 {
     private :
         Contact contact[const_value::MAX_PAGE];
+        string command;
+        string index;
+        stringstream ssindex;
         int cnt;
         int idx;
+    private :
+        bool check_index(int index);
+        bool check_ssindex(int &num);
+        void clear_buf();
     public :
-        void init_member();
+        Phonebook();
         void insert_command();
         void show_index_contact();
 };

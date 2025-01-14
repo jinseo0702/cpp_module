@@ -4,10 +4,16 @@ int main(void)
 {
     Phonebook phonebook;
     string com;
-    phonebook.init_member();
     while (1)
     {
+        cout<<"insert command : ";
         phonebook.insert_command();
+        if (cin.eof())
+        {
+            cout<<"\nexit !"<<endl;
+            exit(1);
+        }
+        cout.flush();
     }
     return (0);
 }

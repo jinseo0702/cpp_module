@@ -1,8 +1,10 @@
-CC = clang++
-CFLAGS = -Wall -Wextra -Werror
+CC = c++
+CFLAGS = -Wall -Wextra -Werror -g -std=c++98
 RM = rm -rf
 
-SRC = ./megaphone.cpp
+SRC = ./ct_fun.cpp \
+	  ./pb_fun.cpp \
+	  ./main.cpp
 
 OBJS = $(SRC:.cpp=.o)
 NAME = megaphone
@@ -10,19 +12,19 @@ NAME = megaphone
 all : $(NAME)
 
 $(NAME): $(OBJS)
-	@$(CC) $(OBJS) -o $(NAME)
+	$(CC) $(OBJS) -o $(NAME)
 
-%.o : %.c
-	@$(CC) $(CFLAGS) -c $< -o $@
+%.o : %.cpp
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean :
-	@$(RM) $(OBJS)
+	$(RM) $(OBJS)
 
 fclean :
-	@$(RM) $(OBJS) $(NAME)
+	$(RM) $(OBJS) $(NAME)
 
 re : 
-	@make fclean
-	@make all
+	make fclean
+	make all
 
 .PHONY: all clean fclean re
