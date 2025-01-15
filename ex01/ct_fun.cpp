@@ -64,7 +64,7 @@ void Contact::print_index()
 
 void Contact::print_contact()
 {
-    cout<<idx<<" | "<<Contact::check(first_name)<<" | "<<Contact::check(last_name)<<" | "<<Contact::check(nick_name)<<endl;
+    cout<<idx<<"|"<<Contact::check(first_name)<<"|"<<Contact::check(last_name)<<"|"<<Contact::check(nick_name)<<endl;
 }
 
 string Contact::check(string str)
@@ -77,5 +77,7 @@ string Contact::check(string str)
     }
     else
         temp = str;
+    if (temp.length() < 10)
+        temp.insert(0, 10 - str.length(), ' ');
     return (temp);
 }

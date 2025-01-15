@@ -25,8 +25,6 @@ class Contact
         void print_contact();
         void print_index();
         string check(string str); 
-}
+};
 
 #endif
-
-/*first name, last name, nickname, phone number and darkest secret.*/ ;

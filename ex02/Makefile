@@ -2,12 +2,10 @@ CC = g++
 CFLAGS = -Wall -Wextra -Werror -g3 -std=c++98
 RM = rm -rf
 
-SRC = ./ct_fun.cpp \
-	  ./pb_fun.cpp \
-	  ./main.cpp
+SRC = ./tests.cpp
 
 OBJS = $(SRC:.cpp=.o)
-NAME = phonebook
+NAME = restoration
 
 all : $(NAME)
 

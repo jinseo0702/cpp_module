@@ -46,6 +46,9 @@ void Phonebook::insert_command()
             return ;
         }
         contact[num].print_index();
+        index.clear();
+        ssindex.clear();
+        ssindex.str("");
     }
    else if (command.compare("EXIT") == 0 && command.length() == 4)
    {
@@ -79,7 +82,10 @@ bool Phonebook::check_index(int idx)
 {
     if (idx < 0 || idx > 7)
     {
-        cout<<"Exceeded valid range"<<endl;
+        return (false);
+    }
+    if (contact[idx].idx == -1)
+    {
         return (false);
     }
     return (true);
