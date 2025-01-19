@@ -6,14 +6,13 @@ int main(void)
     string com;
     while (1)
     {
-        cout<<"insert command : ";
+        cout<<"insert command : "<<flush;
         phonebook.insert_command();
         if (cin.eof())
         {
             cout<<"\nexit !"<<endl;
             exit(1);
         }
-        cout.flush();
     }
     return (0);
 }

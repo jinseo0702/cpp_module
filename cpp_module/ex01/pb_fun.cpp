@@ -26,7 +26,7 @@ void Phonebook::insert_command()
                 break;
             contact[i].print_contact();
         }
-        cout<<"select index number : ";
+        cout<<"select index number : "<<flush;
         getline(cin, index);
         if (cin.eof())
         {
@@ -54,7 +54,6 @@ void Phonebook::insert_command()
    {
         exit(0);
    }
-    cout.flush();
     command.clear();
 }
 

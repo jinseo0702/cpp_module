@@ -1,8 +1,9 @@
-CC = g++
-CFLAGS = -Wall -Wextra -Werror -g3 -std=c++98
+CC = c++
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 
-SRC = ./tests.cpp
+SRC = ./tests.cpp \
+Account.cpp \
 
 OBJS = $(SRC:.cpp=.o)
 NAME = restoration

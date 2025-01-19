@@ -6,7 +6,7 @@ using namespace std;
 int main(int argc, char **argv)
 {
     if (argc == 1)
-        cout<<"* LOUD AND UNBEARABLE FEEDBACK NOISE *\n";
+        cout<<"* LOUD AND UNBEARABLE FEEDBACK NOISE *\n"<<flush;
     else if(argc > 1)
     {
         string str;
@@ -15,8 +15,7 @@ int main(int argc, char **argv)
             str.append(argv[idx]);
         for (size_t i = 0; i < str.size(); i++)
             str[i] = toupper(str[i]);
-        cout<<str<<'\n';
+        cout<<str<<endl;
     }
-    s
     return (0);
 }

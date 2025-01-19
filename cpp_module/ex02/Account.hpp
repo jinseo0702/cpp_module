@@ -23,19 +23,19 @@ public:
 
 	typedef Account		t;
 
-	static int	getNbAccounts( void );
-	static int	getTotalAmount( void );
-	static int	getNbDeposits( void );
-	static int	getNbWithdrawals( void );
-	static void	displayAccountsInfos( void );
+	static int	getNbAccounts( void );//구현
+	static int	getTotalAmount( void );//구현
+	static int	getNbDeposits( void );//구현
+	static int	getNbWithdrawals( void );//구현
+	static void	displayAccountsInfos( void );//구현
 
-	Account( int initial_deposit );
-	~Account( void );
+	Account( int initial_deposit );//구현
+	~Account( void );//구현
 
-	void	makeDeposit( int deposit );
-	bool	makeWithdrawal( int withdrawal );
-	int		checkAmount( void ) const;
-	void	displayStatus( void ) const;
+	void	makeDeposit( int deposit ); // 구현
+	bool	makeWithdrawal( int withdrawal ); //
+	int		checkAmount( void ) const; // 구현
+	void	displayStatus( void ) const;//구현
 
 
 private:
@@ -45,14 +45,14 @@ private:
 	static int	_totalNbDeposits;
 	static int	_totalNbWithdrawals;
 
-	static void	_displayTimestamp( void );
+	static void	_displayTimestamp( void );//구현
 
 	int				_accountIndex;
 	int				_amount;
 	int				_nbDeposits;
 	int				_nbWithdrawals;
 
-	Account( void );
+	Account( void ); // 구현??
 
 };
 

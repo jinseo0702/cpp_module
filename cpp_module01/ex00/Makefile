@@ -1,18 +1,21 @@
-CC = clang++
-CFLAGS = -Wall -Wextra -Werror
+CC = g++
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 RM = rm -rf
 
-SRC = ./megaphone.cpp
+SRC = ./main.cpp \
+./newZombie.cpp \
+./randomChump.cpp \
+./Zombie.cpp \
 
 OBJS = $(SRC:.cpp=.o)
-NAME = megaphone
+NAME = restoration
 
 all : $(NAME)
 
 $(NAME): $(OBJS)
 	@$(CC) $(OBJS) -o $(NAME)
 
-%.o : %.c
+%.o : %.cpp
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean :
