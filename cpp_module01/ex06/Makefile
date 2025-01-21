@@ -1,13 +1,12 @@
 CC = clang++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 RM = rm -rf
 
-SRC = ./ct_fun.cpp \
-	  ./pb_fun.cpp \
-	  ./main.cpp
+SRC = ./main.cpp \
+./Harl.cpp \
 
 OBJS = $(SRC:.cpp=.o)
-NAME = phonebook
+NAME = harlFilter
 
 all : $(NAME)
 

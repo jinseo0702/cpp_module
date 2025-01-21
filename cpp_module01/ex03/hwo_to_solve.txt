@@ -1,0 +1,26 @@
+Unnexessary violence
+
+> Makefile, main.cpp, Weapon.hpp, Weapon.cpp HumanA.hpp HumanA.cpp-
+-HumanB.hpp HumanB.cpp
+
+Implement a Weapon that has :
+> A privat attribute type, which is a string.
+-> 문자열이 privat인 type 속성
+> A getType() member funcion that returns a const reference to type.
+-> getType() 멤버 함수 이 함수는 type의 상수 참조를 반환하다.
+> A setType() member function that sets type usingn the new one passed as parameter.
+-> setType() 멤버함수 이 함수는 매게변수로 전달된 새로운 type을 사용하여 type을 설정한다.
+> Now, create two classes: HumanA and HumanB. They both have a Weapon and a name. They also have a member function attack() that displays(of course, without the angle brackets):
+-> 이제, 만들어라 두개의 클래스들을 : 휴먼A 휴먼B. 그들은 이름과 무기를 가지고 있어야한다.
+-> 그들은 이제 멤버함수 attack()를 가지고 있어야한다. attack 은 <name> attacks with their <weapon type>-
+-이렇게 문자열을 출력해야 한다.
+
+> HumanA and HumanB are almost the same except for thest two tiny details:
+-> 휴먼A 휴먼B 는 거의 같지만 미세한 차이점이 있습니다.
+
+> While HumanA takes the Weapon on its constructor, HumanB doesn't.
+-> 휴먼A는 생성자에서 무기를 가지지만 휴먼B는 그렇지 않습니다.
+> HumanB may not always have a Weapon, whereas HumanA will always be armed.
+-> 휴먼B는 무기를 안가지고 있을 수 도 있다. 휴먼A는 항상 무기를 가져야한다.
+> 
+

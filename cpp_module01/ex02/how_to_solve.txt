@@ -1,0 +1,17 @@
+Hi This is brain
+
+Makefile, main.cpp
+
+> A string variable initialized to "Hi this is brain"
+> stringPTR : A pointer to string.
+> stringREF : A reference to the string
+
+The program has to print :
+> The memory address of the string variable.
+> The memory address held by stringPTR
+> The memory address held by stringREF
+
+and then : 
+> The value of the string variable
+> The value pointed to by stringPTR
+> The value pointed to by stringREF

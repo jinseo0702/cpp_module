@@ -1,0 +1,10 @@
+Harl 2.0
+files to trun in : Makefile, main.cpp, Harl.hpp, Harl.cpp
+
+할의 할만한 대사를 레벨별로 분류한다.
+
+> "DEBUG" level: Debug messages contain contextual information. They are mostly used for problem diagnosis.
+Example: "I love having extra bacon for my 7XL-double-cheese-triple-pickle-specialketchup burger. I really do!"
+-> DEBUG level : 디버그 메세지는 포함한다. 전후 사정과 관련 된 정보를. 이 메세지들은 중요하게 문제를 진단하는데
+사용이된다.
+예시 : 

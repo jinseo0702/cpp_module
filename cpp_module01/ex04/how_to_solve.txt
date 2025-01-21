@@ -1,0 +1,13 @@
+Sed is for losers
+
+forbidden fun : std::string::replace
+assigment file : Makefile, main.cpp *.cpp *.hpp
+
+> Create a program that takes three parameters in the following order : a filename and two string, s1 and s2
+-> 만들어라 프로그램을. 프로그램은 3개의 매개변수를 가진다. 매개변수들은 다음 규칙을 따른다.
+filename, s1, s2
+
+> It will open the file <filename> and copies its content into a new file <filename>.replace,-
+-replacing every occurrence of s1 with s2.
+-> 이프로그램은 filename의 file을 열고 내용을 new file <filename> 에 복사를 한다.-
+-이때 s1은 모두 s2로 교체한다.
