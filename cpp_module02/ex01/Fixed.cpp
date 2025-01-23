@@ -9,13 +9,14 @@ Fixed::Fixed(void)
 Fixed::Fixed(const int num)
 {
     std::cout<<"Int constructor called"<<std::endl;
-    this->f_p_num = num;
+    this->f_p_num = num << this->frac_bit;
 }
+
 
 Fixed::Fixed(const float num)
 {
     std::cout<<"Float constructor called"<<std::endl;
-    this->f_p_num = num;
+    this->f_p_num = roundf(num * (1 << this->frac_bit));
 }
 
 Fixed::Fixed(const Fixed &others)
@@ -41,7 +42,6 @@ Fixed::~Fixed(void)
 
 int Fixed::getRawBits(void) const
 {
-    std::cout<<"getRawBits member function called"<<std::endl;
     return (this->f_p_num);
 }
 
@@ -49,4 +49,22 @@ void Fixed::setRawBits( int const raw )
 {
     std::cout<<"setRawBits member function called"<<std::endl;
     this->f_p_num = raw;
+}
+
+float Fixed::toFloat(void) const
+{
+    float temp = static_cast<float>(this->f_p_num) / (1 << this->frac_bit);
+    return (temp);
+}
+
+int Fixed::toInt(void) const
+{
+    int temp = this->f_p_num / (1 << this->frac_bit);
+    return (temp);
+}
+
+std::ostream& operator<<(std::ostream& out, const Fixed& fix)
+{
+    out << fix.toFloat();
+    return (out);
 }
