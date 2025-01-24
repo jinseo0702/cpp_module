@@ -1,0 +1,30 @@
+Add public member functions to your class to overload the following operators:
+
+> The 6 comparison operators :
+    > :
+    < :
+    >= :
+    <= :
+    == :
+    != :
+
+> The arithmetic operators :
+    + :
+    - :
+    * :
+    / :
+
+> 4개의 전위 후위 연산자
+    ++ : 전위
+    -- : 전위
+    ++ : 후위
+    -- : 후위
+
+• A static member function min that takes as parameters two references on fixed-point
+    numbers, and returns a reference to the smallest one.
+• A static member function min that takes as parameters two references to constant
+    fixed-point numbers, and returns a reference to the smallest one.
+• A static member function max that takes as parameters two references on fixed-point
+    numbers, and returns a reference to the greatest one.
+• A static member function max that takes as parameters two references to constant
+    fixed-point numbers, and returns a reference to the greatest one.

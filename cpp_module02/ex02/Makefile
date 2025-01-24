@@ -6,7 +6,7 @@ SRC = ./main.cpp \
 ./Fixed.cpp \
 
 OBJS = $(SRC:.cpp=.o)
-NAME = ex02
+NAME = ex01
 
 all : $(NAME)
 
