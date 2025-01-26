@@ -4,9 +4,11 @@ RM = rm -rf
 
 SRC = ./main.cpp \
 ./Fixed.cpp \
+./Point.cpp \
+./bsp.cpp \
 
 OBJS = $(SRC:.cpp=.o)
-NAME = ex02
+NAME = BSP
 
 all : $(NAME)
 
