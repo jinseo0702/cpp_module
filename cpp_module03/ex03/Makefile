@@ -1,13 +1,15 @@
 CC = clang++
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
+CFLAGS = -Wall -Wextra -Werror -Wshadow -std=c++98 -g
 RM = rm -rf
 
 SRC = ./main.cpp \
 ./ClapTrap.cpp \
+./FragTrap.cpp \
 ./ScavTrap.cpp \
+./DiamondTrap.cpp \
 
 OBJS = $(SRC:.cpp=.o)
-NAME = ex00
+NAME = DiamondTrap
 
 all : $(NAME)
 

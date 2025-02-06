@@ -1,4 +1,4 @@
-#include "./ScavTrap.hpp"
+#include "./FragTrap.hpp"
 #include <iostream>
 #include <string>
 //test file
@@ -8,7 +8,7 @@ int main(void)
     std::string name;
     std::cout<<"insert name : "<<std::flush;
     std::cin>>name;
-    ScavTrap c_t(name);
+    FragTrap c_t(name);
     std::string cmd;
     std::string target;
     std::cin.ignore();
@@ -39,9 +39,9 @@ int main(void)
             std::cin>>re;
             c_t.beRepaired(re);
         }
-        else if(cmd == "guardGate")
+        else if(cmd == "highFivesGuys")
         {
-            c_t.guardGate();
+            c_t.highFivesGuys();
         }
         else if (std::cin.eof())
         {

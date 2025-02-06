@@ -4,7 +4,7 @@ RM = rm -rf
 
 SRC = ./main.cpp \
 ./ClapTrap.cpp \
-./ScavTrap.cpp \
+./FragTrap.cpp \
 
 OBJS = $(SRC:.cpp=.o)
 NAME = ex00

@@ -108,16 +108,3 @@ void ClapTrap::beRepaired(unsigned int amount)
         this->Hit_point = amount;
     this->Energy_point -= 1;
 }
-
-void ClapTrap::takeEnergy(unsigned int amount)
-{
-    if (Check_point() == false)
-        return;
-    else if (amount > 1000)
-    {
-        std::cout<<"Range is over!"<<std::endl;
-        return ;
-    }
-    std::cout<<"ClapTrap "<<this->name<<" Take Energy"<<std::endl;
-        this->Energy_point = amount;
-}

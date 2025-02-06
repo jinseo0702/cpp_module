@@ -20,7 +20,6 @@ public:
     virtual void attack(const std::string& target);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
-    void takeEnergy(unsigned int amount);
     bool Check_point(void);
     std::string getname(void) const;
     unsigned int get_Hit_p(void) const;
