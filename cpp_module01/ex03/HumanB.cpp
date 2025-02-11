@@ -3,7 +3,6 @@
 HumanB::HumanB(std::string name)
 {
     this->type = NULL;
-    nullptr;
     this->name.append(name);
 }
 

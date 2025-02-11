@@ -1,5 +1,13 @@
 #include "./ScavTrap.hpp"
 
+ScavTrap::ScavTrap() : ClapTrap("noname")
+{
+    this->Hit_point = 100;
+    this->Energy_point = 50;
+    this->Attack_damage = 20;
+    std::cout<<"Make ScavTrap"<<std::endl;
+}
+
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
     this->Hit_point = 100;

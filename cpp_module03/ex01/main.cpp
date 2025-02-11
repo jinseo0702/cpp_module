@@ -4,6 +4,7 @@
 //test file
 int main(void)
 {
+    /*
     int cnt = 0;
     std::string name;
     std::cout<<"insert name : "<<std::flush;
@@ -53,6 +54,10 @@ int main(void)
             std::cout<<"not correct"<<std::endl;
         }
         cnt++;
-    }
+    }*/
+    ScavTrap temp2();
+    ClapTrap *temp = &temp2;
+    temp->attack("anamy");
+    delete temp;
     return (0);
 }

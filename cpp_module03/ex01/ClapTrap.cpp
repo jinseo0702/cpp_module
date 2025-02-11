@@ -1,5 +1,13 @@
 #include "./ClapTrap.hpp"
 
+ClapTrap::ClapTrap()
+{
+    this->Hit_point = 10;
+    this->Energy_point = 10;
+    this->Attack_damage = 0;
+    std::cout<<"Make ClapTrap"<<std::endl;
+}
+
 ClapTrap::ClapTrap(std::string name) : name(name)
 {
     this->Hit_point = 10;
