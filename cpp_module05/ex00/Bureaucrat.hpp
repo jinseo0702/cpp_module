@@ -5,6 +5,7 @@
 #include <iostream>
 #include <exception>
 
+
 class Bureaucrat
 {
 private:
@@ -13,13 +14,13 @@ private:
     const std::string B_name;
     int B_grade;
 public:
-    Bureaucrat(/* args */);
+    Bureaucrat();
     Bureaucrat(std::string name, int grade);
     Bureaucrat(const Bureaucrat &otehr);
     Bureaucrat &operator=(const Bureaucrat &otehr);
     ~Bureaucrat();
     std::string const &getName() const;
-    int const getGrade() const;
+    int getGrade() const;
     void incrementGrade(int num);
     void decrementGrade(int num);
 };

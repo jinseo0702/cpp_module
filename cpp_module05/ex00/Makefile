@@ -3,11 +3,9 @@ CFLAGS = -Wall -Wextra -Werror -Wshadow -std=c++98 -g
 RM = rm -rf
 
 SRC = ./main.cpp \
-./Animal.cpp \
-./Cat.cpp \
-./Dog.cpp \
-./WrongAnimal.cpp \
-./WrongCat.cpp \
+./Bureaucrat.cpp \
+./GradeTooHighException.cpp \
+./GradeTooLowException.cpp \
 
 OBJS = $(SRC:.cpp=.o)
 NAME = ex00
