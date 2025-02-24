@@ -49,6 +49,7 @@ void MateriaSource::learnMateria(AMateria* other)
 {//very high leak possibility
     if (idx == 4)
     {
+        delete other;
         std::cout<<"Inventroy is Full!"<<std::endl;
         return ;
     }

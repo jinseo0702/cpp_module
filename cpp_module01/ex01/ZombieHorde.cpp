@@ -8,7 +8,8 @@ Zombie * zombieHorde(int N, std::string name)
         exit(1);
     }
     Zombie * fir_zom = new Zombie[N];
-    
+    if (fir_zom == NULL)
+        exit(1);
     for (int i = 0; i < N; i++)
     {
         fir_zom[i].set_name(name);
