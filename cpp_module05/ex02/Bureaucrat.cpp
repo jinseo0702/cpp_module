@@ -74,7 +74,7 @@ void Bureaucrat::decrementGrade(int num)
     }
 }
 
-void Bureaucrat::signForm(Form& For) const
+void Bureaucrat::signForm(AForm& For) const
 {
     try
     {
@@ -84,12 +84,43 @@ void Bureaucrat::signForm(Form& For) const
     catch(const std::exception& e)
     {
         std::cout<<this->B_name<<" couldn't signed "<<e.what()<<std::endl;
+        throw GradeTooLowException();
+    }
+}
+
+void Bureaucrat::checkForm(AForm& For) const
+{
+    try
+    {
+        For.excheck(*this);
+        std::cout<<this->B_name<<" Do execute ! "<<For.getName()<<std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cout<<this->B_name<<" couldn't execute "<<e.what()<<std::endl;
+        throw GradeTooLowException();
+    }
+}
+
+void Bureaucrat::executeForm(AForm const & form)
+{
+    try
+    {
+        form.execute(*this);
+        std::cout<<this->B_name<<" executed "<<form.getName()<<std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    catch(const char *e)
+    {
+        std::cerr << e << '\n';
     }
 }
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat& Bur)
 {
-    // <name>, bureaucrat grade <grade>.
     out << Bur.getName();
     out << ", bureaucrat grade ";
     out << Bur.getGrade()<<"."<<std::endl;

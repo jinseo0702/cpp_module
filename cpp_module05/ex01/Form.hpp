@@ -5,15 +5,17 @@
 #include <iostream>
 #include "./Bureaucrat.hpp"
 
+class Bureaucrat;
+
 class Form
 {
 private:
+    class GradeTooHighException;
+    class GradeTooLowException;
     const std::string Fname;
     bool sign;
     const int required_sign;
     const int required_execute;
-    class GradeTooHighException;
-    class GradeTooLowException;
 public:
     Form(void);
     Form(std::string name, int sign, int execute);
@@ -21,12 +23,12 @@ public:
     Form &operator=(const Form& other);
     ~Form();
     std::string const &getName() const;
-    int getSign();
-    int const getSign() const;
-    int const getExecute() const;
-    void beSigned(const Bureaucrat& obj) const;
+    bool getSign() const;
+    int getreSign() const;
+    int getExecute() const;
+    void beSigned(const Bureaucrat& obj);
 };
 
-std::ostream &operator<<(std::ostream &out, const Form& Bur);
+std::ostream &operator<<(std::ostream &out, const Form& For);
 
 #endif

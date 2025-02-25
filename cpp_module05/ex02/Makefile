@@ -4,14 +4,15 @@ RM = rm -rf
 
 SRC = ./main.cpp \
 ./Bureaucrat.cpp \
-./Form.cpp \
+./AForm.cpp \
 ./Form_GradeTooHighException.cpp \
 ./Form_GradeTooLowException.cpp \
 ./GradeTooHighException.cpp \
 ./GradeTooLowException.cpp \
+./ShrubberyCreationForm.cpp \
 
 OBJS = $(SRC:.cpp=.o)
-NAME = ex00
+NAME = ex02
 
 all : $(NAME)
 

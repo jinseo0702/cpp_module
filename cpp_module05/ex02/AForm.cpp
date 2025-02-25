@@ -1,17 +1,18 @@
-#include "./Form.hpp"
+#include "./AForm.hpp"
 #include "./Form_GradeTooHighException.hpp"
 #include "./Form_GradeTooLowException.hpp"
 
-Form::Form(void) :
+AForm::AForm(void) :
 Fname("No_Name"),
+Ftarget("No_Name"),
 sign(false),
 required_sign(0),
 required_execute(0)
 {
-    throw "No name Form is Not good\n";
+    throw "No name AForm is Not good\n";
 }
 
-Form::Form(std::string name, int sign, int execute) :
+AForm::AForm(std::string name, int sign, int execute) :
 Fname(name),
 sign(false),
 required_sign(sign),
@@ -23,50 +24,57 @@ required_execute(execute)
         throw GradeTooHighException();
 }
 
-Form::Form(const Form& other) :
+AForm::AForm(const AForm& other) :
 Fname(other.Fname),
+Ftarget(other.Ftarget),
 sign(other.sign),
 required_sign(other.required_sign),
 required_execute(other.required_execute)
 {
 }
 
-Form &Form::operator=(const Form& other)
+AForm &AForm::operator=(const AForm& other)
 {
     //const 에 대한 내용은 다 예외처리를 해야하는걸까?
     if (this != &other)
     {
+        this->Ftarget = other.Ftarget;
         this->sign = other.sign;
     }
     return (*this);
 }
 
-Form::~Form()
+AForm::~AForm()
 {
-    std::cout<<"Good bye Form!"<<std::endl;
+    std::cout<<"Good bye AForm!"<<std::endl;
 }
 
-std::string const &Form::getName() const
+std::string const &AForm::getName() const
 {
     return(this->Fname);
 }
 
-bool Form::getSign() const
+std::string const &AForm::getTarget() const
+{
+    return(this->Ftarget);
+}
+
+bool AForm::getSign() const
 {
     return (this->sign);
 }
 
-int Form::getreSign() const
+int AForm::getreSign() const
 {
     return (this->required_sign);
 }
 
-int Form::getExecute() const
+int AForm::getExecute() const
 {
     return (this->required_execute);
 }
 
-void Form::beSigned(const Bureaucrat& obj)
+void AForm::beSigned(const Bureaucrat& obj)
 {
     if (obj.getGrade() > this->required_sign)
         throw GradeTooLowException();
@@ -74,9 +82,21 @@ void Form::beSigned(const Bureaucrat& obj)
         this->sign = true;
 }
 
-std::ostream &operator<<(std::ostream &out, const Form& For)
+void AForm::excheck(const Bureaucrat& obj)
+{
+    if (obj.getGrade() > this->required_execute)
+        throw GradeTooLowException();
+}
+
+void AForm::settarget(std::string target)
+{
+    this->Ftarget = target;
+}
+
+std::ostream &operator<<(std::ostream &out, const AForm& For)
 {
     out<<"name is : "<<For.getName()<<"\n";
+    out<<"target is : "<<For.getTarget()<<"\n";
     out<<"sign is : "<<std::boolalpha<<For.getSign()<<"\n"; 
     out<<"required_sign is : "<<For.getreSign()<<"\n"; 
     out<<"required_execute : "<<For.getExecute()<<"\n";
