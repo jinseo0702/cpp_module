@@ -10,7 +10,6 @@ Fixed::Fixed(const int num)
     this->f_p_num = num << this->frac_bit;
 }
 
-
 Fixed::Fixed(const float num)
 {
     this->f_p_num = roundf(num * (1 << this->frac_bit));
