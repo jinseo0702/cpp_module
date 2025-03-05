@@ -45,11 +45,11 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
             srand(getpid());
             if((rand() % 2) == 0)
             {
-                std::cout << "Weeeing drilling Weeeing Weeeing Weeeing" << std::endl;
+                std::cout<< this->getTarget() << "Weeeing drilling Weeeing Weeeing Weeeing" << std::endl;
             }
             else
             {
-                std::cout << "Failed drilling" << std::endl;
+                std::cout<< this->getTarget() << "Failed drilling" << std::endl;
             }
         }
     }

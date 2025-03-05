@@ -42,14 +42,15 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
             throw GradeTooLowException();
         else
         {
+            int random = rand() % 2;
             srand(getpid());
-            if((rand() % 2) == 0)
+            if(random)
             {
-                std::cout << "Weeeing drilling Weeeing Weeeing Weeeing" << std::endl;
+                std::cout <<this->getTarget()<<" Weeeing drilling Weeeing Weeeing Weeeing" << std::endl;
             }
             else
             {
-                std::cout << "Failed drilling" << std::endl;
+                std::cout<< this->getTarget() << "Failed drilling" << std::endl;
             }
         }
     }
