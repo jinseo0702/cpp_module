@@ -1,5 +1,5 @@
-#include "ScalarConverter.hpp"
-#include "./utils.hpp"
+#include "../include/ScalarConverter.hpp"
+#include "../include/utils.hpp"
 
 ScalarConverter::ScalarConverter(void)
 {}

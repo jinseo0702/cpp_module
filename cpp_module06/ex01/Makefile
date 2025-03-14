@@ -1,13 +1,12 @@
-CC = clang++
+CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 RM = rm -rf
 
 SRC = ./src/main.cpp \
-./src/ScalarConverter.cpp \
-./src/utils.cpp \
+./src/Serializer.cpp \
 
 OBJS = $(SRC:.cpp=.o)
-NAME = ex00
+NAME = ex01
 
 all : $(NAME)
 

@@ -1,8 +1,7 @@
-#include "./utils.hpp"
+#include "../include/utils.hpp"
 
 TAG check_is_right(std::string &str, double &num)
 {
-    // std::cout<<str.find('.')<<std::endl;
     if(str.find('.') > 0)
     {
         if (str[str.find('.') + 1] == '\0')
@@ -110,8 +109,9 @@ void print_type_float(double f, TAG tag, std::string str)
             std::cout<<"float: inff"<<std::endl;
         else
         {
-            int idx = str.find('.');
-            if (idx == -1)
+            int test = static_cast<int>(f);
+            bool flag = static_cast<double>(test) == f;
+            if (flag)
                 std::cout<<"float: "<<ff<<".0f"<<std::endl;
             else
                 std::cout<<"float: "<<ff<<"f"<<std::endl;
@@ -140,8 +140,9 @@ void print_type_double(double d, TAG tag, std::string str)
             std::cout<<"double: inf"<<std::endl;
         else
         {
-            int idx = str.find('.');
-            if (idx == -1)
+            int test = static_cast<int>(d);
+            bool flag = static_cast<double>(test) == d;
+            if (flag)
                 std::cout<<"double: "<<d<<".0"<<std::endl;
             else
                 std::cout<<"double: "<<d<<std::endl;
