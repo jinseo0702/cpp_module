@@ -1,45 +1,117 @@
-# Exercise 00: Easy find
+# Exercise 02: Mutated abomination
 
- |Easy find|
+ |Mutated abomination|
  |---|
- |Turn-in directory : ex00/|
- |Files to turn in : Makefile, main.cpp, easyfind.{h, hpp} and optional file: easyfind.tpp|
+ |Turn-in directory : ex02/|
+ |Files to turn in : Makefile, main.cpp, MutantStack.{h, hpp}
+and optional file: MutantStack.tpp|
  |Forbidden functions : None|
 
-> A first easy exercise is the way to start off on the right foot.  
+> Now, time to move on more serious things. Let’s develop something weird.  
 
-> Write a function template easyfind that accepts a type T. It takes two parameters.  
+>The std::stack container is very nice. Unfortunately, it is one of the only STL Containers that is NOT **iterable**. That’s too bad.  
 
-> The first one has type T and the second one is an integer.  
+> But why would we accept this? **Especially** if we can take the liberty of butchering the original stack to create missing features.  
 
-> Assuming T is a container of integers, this function has to find the first occurrence of the second parameter in the first parameter.  
+> To repair this injustice, you have to make the std::stack container iterable.  
 
-> If no occurrence is found, you can either throw an exception or return an error value of your choice. If you need some inspiration, analyze how standard containers behave.  
+> Write a MutantStack class. It will be implemented in terms of a std::stack.  
+>It will offer all its member functions, plus an additional feature: iterators.  
 
-> Of course, implement and turn in your own tests to ensure everything works as expected  
+> Of course, you will write and turn in your own tests to ensure everything works as expected.  
 
-> You don’t have to handle associative containers.  
+> Find a test example below.
+
+```cpp
+int main()
+{
+    MutantStack<int> mstack;
+
+    mstack.push(5);
+    mstack.push(17);
+    std::cout << mstack.top() << std::endl;
+    mstack.pop();
+    std::cout << mstack.size() << std::endl;
+    mstack.push(3);
+    mstack.push(5);
+    mstack.push(737);
+    //[...]
+    mstack.push(0);
+
+    MutantStack<int>::iterator it = mstack.begin();
+    MutantStack<int>::iterator ite = mstack.end();
+
+    ++it;
+    --it;
+    while (it != ite)
+    {
+        std::cout << *it << std::endl;
+        ++it;
+    }
+    std::stack<int> s(mstack);
+    return 0;
+}
+```
+
+> If you run it a first time with your MutantStack, and a second time replacing the MutantStack with, for example, a std::list, the two outputs should be the same. Of course, when testing another container, update the code below with the corresponding member functions (push() can become push_back()).  
 
 
 
-# 연습 문제 00: 쉬운 찾기
+안녕하세요! 주어진 과제를 번역해 드리겠습니다.
 
-|쉬운 찾기|
-|---|
-|제출 디렉토리 : ex00/|
-|제출할 파일 : Makefile, main.cpp, easyfind.{h, hpp} 그리고 선택적 파일: easyfind.tpp|
-|금지된 함수 : 없음|
+# 과제 02: 돌연변이 괴물
 
-> 첫 번째 쉬운 연습문제는 올바른 방향으로 시작하는 방법입니다.
+ |돌연변이 괴물|
+ |---|
+ |제출 디렉토리 : ex02/|
+ |제출할 파일 : Makefile, main.cpp, MutantStack.{h, hpp}
+및 선택적 파일: MutantStack.tpp|
+ |금지된 함수 : 없음|
 
-> 타입 T를 받는 함수 템플릿 easyfind를 작성하세요. 이 함수는 두 개의 매개변수를 받습니다.
+> 이제, 더 진지한 것들로 넘어갈 시간입니다. 뭔가 이상한 것을 개발해 봅시다.
 
-> 첫 번째 매개변수는 T 타입이고 두 번째 매개변수는 정수입니다.
+> std::stack 컨테이너는 매우 좋습니다. 불행히도, 이것은 **순회 가능하지 않은** 유일한 STL 컨테이너 중 하나입니다. 그것은 너무 아쉽습니다.
 
-> T가 정수의 컨테이너라고 가정할 때, 이 함수는 첫 번째 매개변수에서 두 번째 매개변수의 첫 번째 등장을 찾아야 합니다.
+> 하지만 왜 우리가 이것을 받아들여야 할까요? **특히** 우리가 누락된 기능을 만들기 위해 원래 스택을 훼손할 자유를 가질 수 있다면요.
 
-> 만약 등장하는 것이 없다면, 예외를 던지거나 여러분이 선택한 에러 값을 반환할 수 있습니다. 영감이 필요하다면, 표준 컨테이너가 어떻게 동작하는지 분석해보세요.
+> 이 부당함을 바로잡기 위해, 여러분은 std::stack 컨테이너를 순회 가능하게 만들어야 합니다.
 
-> 물론, 모든 것이 예상대로 작동하는지 확인하기 위해 여러분만의 테스트를 구현하고 제출하세요.
+> MutantStack 클래스를 작성하세요. 이것은 std::stack을 기반으로 구현될 것입니다.
+> 이것은 기존의 모든 멤버 함수와 추가 기능: 반복자(iterators)를 제공할 것입니다.
 
-> 연관 컨테이너(associative containers)는 처리할 필요가 없습니다.
+> 물론, 모든 것이 예상대로 작동하는지 확인하기 위해 자신만의 테스트를 작성하고 제출할 것입니다.
+
+> 아래에서 테스트 예제를 찾아보세요.
+
+```cpp
+int main()
+{
+    MutantStack<int> mstack;
+
+    mstack.push(5);
+    mstack.push(17);
+    std::cout << mstack.top() << std::endl;
+    mstack.pop();
+    std::cout << mstack.size() << std::endl;
+    mstack.push(3);
+    mstack.push(5);
+    mstack.push(737);
+    //[...]
+    mstack.push(0);
+
+    MutantStack<int>::iterator it = mstack.begin();
+    MutantStack<int>::iterator ite = mstack.end();
+
+    ++it;
+    --it;
+    while (it != ite)
+    {
+        std::cout << *it << std::endl;
+        ++it;
+    }
+    std::stack<int> s(mstack);
+    return 0;
+}
+```
+
+> 만약 여러분이 처음에 MutantStack으로 실행하고, 두 번째에는 MutantStack을 예를 들어 std::list로 바꿔서 실행한다면, 두 출력은 동일해야 합니다. 물론, 다른 컨테이너를 테스트할 때는 아래 코드를 해당하는 멤버 함수(push()가 push_back()이 될 수 있음)로 업데이트하세요.
