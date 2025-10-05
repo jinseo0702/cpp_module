@@ -3,10 +3,10 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 RM = rm -rf
 
 SRC = ./src/main.cpp \
-./src/BitcoinExchange.cpp \
+./src/RPN.cpp \
 
 OBJS = $(SRC:.cpp=.o)
-NAME = BitcoinExchange
+NAME = RPN
 
 all : $(NAME)
 

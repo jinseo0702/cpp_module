@@ -29,6 +29,8 @@ public:
     void assign_map();
     void to_evaluate(std::string path);
     bool isvaliddate(std::string date);
+    bool ifLeapYear(int year);
+    bool checkDay(int mon); 
     bool isvalidvalue(std::string value);
     bool isvalidrange(std::string value);
     bool check_valid_input(std::string &input_line, std::string &date);

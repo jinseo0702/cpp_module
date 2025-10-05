@@ -74,10 +74,39 @@ bool BitcoinExchange::isvaliddate(std::string date)
         if (!isdigit(date[i])) return false;
     for (int i = 8; i < 10; i++)
         if (!isdigit(date[i])) return false;
+    int year = atoi(date.substr(0, 4).c_str()); 
     int mon = atoi(date.substr(5, 2).c_str());
     int day = atoi(date.substr(8, 2).c_str());
+
+    if (year < 1) return false;
     if (!(mon >= 1 && mon <= 12)) return false;
-    if (!(day >= 1 && day <= 31)) return false;
+
+    int dayMax;
+
+    if (mon == 2) {
+        if (ifLeapYear(year) == true) dayMax = 29;
+        else dayMax = 28;
+    }
+    else if (checkDay(mon) == true){
+        dayMax = 31;
+    }
+    else{
+        dayMax = 30;
+    }
+    if (!(day >= 1 && day <= dayMax)) return false;
+    return (true);
+}
+
+bool BitcoinExchange::checkDay(int mon)
+{
+    return (mon == 1 || mon == 3 || mon == 5 || mon == 7 || mon == 8 || mon == 10 || mon == 12);
+}
+
+bool BitcoinExchange::ifLeapYear(int year)
+{
+    if ((year % 4) != 0) return false;
+    if ((year % 100) == 0)
+        if ((year % 400) != 0) return false;
     return (true);
 }
 
@@ -153,7 +182,7 @@ void BitcoinExchange::to_evaluate(std::string path)
     }
     while (std::getline(input, input_line)) {
         if (cnt == 0){
-            if(input_line.compare("date | value") != 0){
+            if(input_line.compare("date | value") != 0 || input_line.length() == 0){
                 std::cerr<<"Error: Check file format try again!"<<std::endl;
                 input.close();
                 exit(1);
@@ -167,6 +196,9 @@ void BitcoinExchange::to_evaluate(std::string path)
                 continue;
         }
         cnt++;
+    }
+    if (cnt == 0){
+        std::cerr<<"Error: Check File is empty!"<<std::endl;
     }
     input.close();
 }
